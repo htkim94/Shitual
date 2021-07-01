@@ -29,7 +29,7 @@ This product is a joint work  of Shree Devi Yadam and Hotae Kevin Kim
   - username: `labber` 
   - password: `labber` 
   - database: `midterm`
-3. Also update Twilio Account SID AUTHTOKEN AND Outgoing phone number.
+3. Also update Twilio Account SID AUTHTOKEN AND Outgoing phone number and configure Twilio account webhook to POST to http://<authority>/api/restaurants/sms .
 4. Install dependencies: `npm i`
 5. Fix to binaries for sass: `npm rebuild node-sass`
 6. Reset database: `npm run db:reset`
