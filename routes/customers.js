@@ -78,7 +78,7 @@ module.exports = (router, db) => {
     .then(orderItems => {
 
         // Render page for user
-        const total_price = orderItems[0].total_price/100;
+        const total_price = (orderItems[0].total_price/100).toFixed(2);
         const order_id = orderItems[0].id;
         const customerName = orderItems[0].name;
         const restaurantName = orderItems[0].restaurant_name;
@@ -86,9 +86,9 @@ module.exports = (router, db) => {
         for (let i = 0; i < orderItems.length; i++) {
           const menuItem = {};
           menuItem.name = orderItems[i].item_name;
-          menuItem.unit_price = orderItems[i].unit_price/100;
+          menuItem.unit_price = (orderItems[i].unit_price/ 100).toFixed(2);
           menuItem.quantity = orderItems[i].quantity;
-          menuItem.order_price = orderItems[i].order_price/100;
+          menuItem.order_price = (orderItems[i].order_price/100).toFixed(2);
           menuDetails.push(menuItem);
         }
         const templateVars = {
@@ -210,7 +210,7 @@ module.exports = (router, db) => {
         const customerNumber = customer_order_restaurant[0].phone_number;
         const customerMessage = `
         Dear, ${customer_order_restaurant[0].name},
-        your order #${customer_order_restaurant[0].id} has been sent to ${customer_order_restaurant[0].restaurant_name}. Your total amount due at the time of pickup is $${customer_order_restaurant[0].total_price / 100}. You will be updated about the status soon. Thanks!`
+        your order #${customer_order_restaurant[0].id} has been sent to ${customer_order_restaurant[0].restaurant_name}. Your total amount due at the time of pickup is $${(customer_order_restaurant[0].total_price / 100).toFixed(2)}. You will be updated about the status soon. Thanks!`
         const smsCustomerPromise = sms.sendSMS(customerNumber, customerMessage);
         const restaurantNumber = customer_order_restaurant[0].restaurant_phone_number;
         //prepare restaurant message

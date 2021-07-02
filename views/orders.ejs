@@ -68,7 +68,7 @@
                                 <% } %>
                             </div>
                             <div class="totalPrice">
-                              Total: $<%= (order[0].total) / 100 %>
+                              Total: $<%= (order[0].total / 100).toFixed(2) %>
                             </div>
                           </div>
                         </div>
@@ -109,7 +109,7 @@
                             <% } %>
                         </div>
                         <div class="totalPrice">
-                          Total: $<%= (order[0].total) / 100 %>
+                          Total: $<%= (order[0].total / 100 ).toFixed(2) %>
                         </div>
                       </div>
                     </div>

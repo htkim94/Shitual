@@ -39,7 +39,7 @@
             <p><%= menuItem.description %></p>
           </div>
           <div class="item-price">
-            <p><%= '$' + menuItem.price/100 %></p>
+            <p>$ <%= (menuItem.price / 100).toFixed(2) %></p>
           </div>
           <% if (customerId) { %>
             <input name="itemId" value="<%= menuItem.id %>" hidden>
