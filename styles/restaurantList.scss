@@ -8,6 +8,7 @@
     padding: 20px;
     display: flex;
     justify-content: space-between;
+    margin-bottom: 2em;
     div{
       align-self: center;
       img {
@@ -32,6 +33,7 @@
       display: flex;
       flex-direction: column;
       justify-content: space-evenly;
+      width: 25%;
     }
     :hover {
       cursor: pointer;

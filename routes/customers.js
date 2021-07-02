@@ -245,7 +245,8 @@ module.exports = (router, db) => {
       .catch(e => {
         console.error(e);
         console.log("ORDER CREATE FAILURE");
-        res.send(e);
+        // res.send(e);
+        res.redirect("/");//TBD : bug for 0 quantity
       });
   });
   return router;
